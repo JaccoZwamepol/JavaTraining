@@ -27,8 +27,7 @@ public class Application {
 
             else if (i.equalsIgnoreCase("done"))
             {
-                System.out.println("You're total is $" + determineTotal(ShoppingCart.getItems()));
-                System.out.println("Thank You for shopping at ''ah.nl''");
+                CashRegister.cashRegister(ShoppingCart.getItems());
                 notExit = false;
             }
 
@@ -42,23 +41,5 @@ public class Application {
                     System.out.println(Inventory.getItem(Integer.parseInt(i)).getName() + " is currently out of stock");
             }
         }
-    }
-
-    //loops through every item in the list and adds the price of that item
-    //(times the quantity of that item) to the total price, then returns
-    // the total price
-    public static double determineTotal(ArrayList<Item> arrayHolder)
-    {
-        double total = 0;
-        for(Item c : arrayHolder )
-        {
-            total += (c.getQuantity() * c.getPrice());
-        }
-        if (total > 20.0)
-            return total - 1.0;
-        else if (total > 10.0)
-            return total - 0.5;
-        else
-            return total;
     }
 }
