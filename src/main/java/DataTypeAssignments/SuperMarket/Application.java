@@ -32,13 +32,13 @@ public class Application {
             }
 
             else {
-                if (Inventory.getItem(Integer.parseInt(i)).getQuantity() > 0) {
-                    String item = Inventory.getItem(Integer.parseInt(i)).getName();
-                    double price = Inventory.getItem(Integer.parseInt(i)).getPrice();
-                    ShoppingCart.addToCart(new Item(item,price));
+                Item item = Inventory.getItem(Integer.parseInt(i));
+                if (item.getQuantity() > 0) {
+                    item.updateQuantity(-1);
+                    ShoppingCart.addToCart(new Item(item.getName(),item.getPrice()));
                 }
                 else
-                    System.out.println(Inventory.getItem(Integer.parseInt(i)).getName() + " is currently out of stock");
+                    System.out.println(Inventory.getItem(Integer.parseInt(i)).getName() + " are currently out of stock");
             }
         }
     }

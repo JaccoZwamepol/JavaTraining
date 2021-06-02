@@ -5,7 +5,7 @@ public class Inventory {
     //creating the invetory list
     private static Item Soap = new Item("Soap", 28, 3.0);
     private static Item Cereals = new Item("Cereals", 30, 2.5);
-    private static Item ChineseVegetables = new Item("Chinese vegetables", 20, 5.0);
+    private static Item ChineseVegetables = new Item("Chinese vegetables", 5, 5.0);
     private static Item Yoghourt = new Item("Yoghourt", 25, 2.0);
     private static Item Diapers = new Item("Diapers", 60, 10.0);
     private static ArrayList<Item> inventoryHolder = new ArrayList<Item>();
@@ -26,7 +26,6 @@ public class Inventory {
     //if a call number is called, the corresponding inventory member is returned
     public static Item getItem( int input)
     {
-        inventoryHolder.get(input - 1).updateQuantity(-1);
         return inventoryHolder.get(input - 1);
     }
 

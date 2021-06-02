@@ -20,7 +20,7 @@ public class CashRegister {
             printCart(total, ZERO);
     }
 
-    static void printCart(double t, double d){
+    private static void printCart(double t, double d){
         System.out.println("You're total is $" + t);
         System.out.println("And you're total discount is $" + d);
         System.out.println("Thank You for shopping at ''ah.nl''");
